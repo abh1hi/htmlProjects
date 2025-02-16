@@ -1,0 +1,347 @@
+<html>
+
+<head>
+    <style>
+        #table {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+        }
+
+        .chess-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chess-cell {
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            font-size: 0px;
+        }
+
+        .odd-cell {
+            background-color: rgb(222, 150, 150);
+        }
+
+        .even-cell {
+            background-color: rgb(232, 232, 232);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="table">
+        <div id="R1" class="chess-row">
+            <div id="R1C1" class="chess-cell odd-cell"></div>
+            <div id="R1C2" class="chess-cell even-cell"></div>
+            <div id="R1C3" class="chess-cell odd-cell"></div>
+            <div id="R1C4" class="chess-cell even-cell"></div>
+            <div id="R1C5" class="chess-cell odd-cell"></div>
+            <div id="R1C6" class="chess-cell even-cell"></div>
+            <div id="R1C7" class="chess-cell odd-cell"></div>
+            <div id="R1C8" class="chess-cell even-cell"></div>
+        </div>
+        <div id="R2" class="chess-row">
+            <div id="R2C1" class="chess-cell even-cell"></div>
+            <div id="R2C2" class="chess-cell odd-cell"></div>
+            <div id="R2C3" class="chess-cell even-cell"></div>
+            <div id="R2C4" class="chess-cell odd-cell"></div>
+            <div id="R2C5" class="chess-cell even-cell"></div>
+            <div id="R2C6" class="chess-cell odd-cell"></div>
+            <div id="R2C7" class="chess-cell even-cell"></div>
+            <div id="R2C8" class="chess-cell odd-cell"></div>
+        </div>
+        <div id="R3" class="chess-row">
+            <div id="R3C1" class="chess-cell odd-cell"></div>
+            <div id="R3C2" class="chess-cell even-cell"></div>
+            <div id="R3C3" class="chess-cell odd-cell"></div>
+            <div id="R3C4" class="chess-cell even-cell"></div>
+            <div id="R3C5" class="chess-cell odd-cell"></div>
+            <div id="R3C6" class="chess-cell even-cell"></div>
+            <div id="R3C7" class="chess-cell odd-cell"></div>
+            <div id="R3C8" class="chess-cell even-cell"></div>
+        </div>
+        <div id="R4" class="chess-row">
+            <div id="R4C1" class="chess-cell even-cell"></div>
+            <div id="R4C2" class="chess-cell odd-cell"></div>
+            <div id="R4C3" class="chess-cell even-cell"></div>
+            <div id="R4C4" class="chess-cell odd-cell"></div>
+            <div id="R4C5" class="chess-cell even-cell"></div>
+            <div id="R4C6" class="chess-cell odd-cell"></div>
+            <div id="R4C7" class="chess-cell even-cell"></div>
+            <div id="R4C8" class="chess-cell odd-cell"></div>
+        </div>
+        <div id="R5" class="chess-row">
+            <div id="R5C1" class="chess-cell odd-cell"></div>
+            <div id="R5C2" class="chess-cell even-cell"></div>
+            <div id="R5C3" class="chess-cell odd-cell"></div>
+            <div id="R5C4" class="chess-cell even-cell"></div>
+            <div id="R5C5" class="chess-cell odd-cell"></div>
+            <div id="R5C6" class="chess-cell even-cell"></div>
+            <div id="R5C7" class="chess-cell odd-cell"></div>
+            <div id="R5C8" class="chess-cell even-cell"></div>
+        </div>
+        <div id="R6" class="chess-row">
+            <div id="R6C1" class="chess-cell even-cell"></div>
+            <div id="R6C2" class="chess-cell odd-cell"></div>
+            <div id="R6C3" class="chess-cell even-cell"></div>
+            <div id="R6C4" class="chess-cell odd-cell"></div>
+            <div id="R6C5" class="chess-cell even-cell"></div>
+            <div id="R6C6" class="chess-cell odd-cell"></div>
+            <div id="R6C7" class="chess-cell even-cell"></div>
+            <div id="R6C8" class="chess-cell odd-cell"></div>
+        </div>
+        <div id="R7" class="chess-row">
+            <div id="R7C1" class="chess-cell odd-cell"></div>
+            <div id="R7C2" class="chess-cell even-cell"></div>
+            <div id="R7C3" class="chess-cell odd-cell"></div>
+            <div id="R7C4" class="chess-cell even-cell"></div>
+            <div id="R7C5" class="chess-cell odd-cell"></div>
+            <div id="R7C6" class="chess-cell even-cell"></div>
+            <div id="R7C7" class="chess-cell odd-cell"></div>
+            <div id="R7C8" class="chess-cell even-cell"></div>
+        </div>
+        <div id="R8" class="chess-row">
+            <div id="R8C1" class="chess-cell even-cell"></div>
+            <div id="R8C2" class="chess-cell odd-cell"></div>
+            <div id="R8C3" class="chess-cell even-cell"></div>
+            <div id="R8C4" class="chess-cell odd-cell"></div>
+            <div id="R8C5" class="chess-cell even-cell"></div>
+            <div id="R8C6" class="chess-cell odd-cell"></div>
+            <div id="R8C7" class="chess-cell even-cell"></div>
+            <div id="R8C8" class="chess-cell odd-cell"></div>
+        </div>
+    </div>
+    <button onclick="play()">Play</button>
+    <!-- first version of ptrust chess in this chess you can play chess by your 
+     own rules no boundation what move you can choose or how you can play 
+     just use your imagination -->
+     <!-- by abhinav github(https://www.linkedin.com/in/abhinav-abhinav-b8a7851b3/) linkedein(https://www.linkedin.com/in/abhinav-abhinav-b8a7851b3/)-->
+    <!--
+Liborio Conti
+Free no copyright background royalty free music, composed by Liborio Conti.
+Free background music for videos, apps, documentary, film, presentations, youtube, etc.
+Download free background music from my royalty free audio library.
+-->
+
+</body>
+
+<script>
+    const white_pawn_path = "url('Media/white_pawn.png')";
+    const black_pawn_path = "url('Media/black_pawn.png')";
+    const white_knight_path = "url('Media/white_knight.png')";
+    const black_knight_path = "url('Media/black_knight.png')";
+    const white_bishop_path = "url('Media/white_bishop.png')";
+    const black_bishop_path = "url('Media/black_bishop.png')";
+    const white_horse_path = "url('Media/white_horse.png')";
+    const black_horse_path = "url('Media/black_horse.png')";
+    const white_queen_path = "url('Media/white_queen.png')";
+    const black_queen_path = "url('Media/black_queen.png')";
+    const white_king_path = "url('Media/white_king.png')";
+    const black_king_path = "url('Media/black_king.png')";
+    const piececlickSound = new Audio("Media/piececlick.mp3");
+    const pieceMoveSound = new Audio("Media/pieceslide.mp3");
+    const backgroundSound = new Audio("Media/LCFreeRelaxingMusic.mp3");
+    var paly_status = "off";
+    var turn = "";
+
+    // activate chess board
+    function activate_board() {
+        for (var i = 0; i < document.querySelector("#table").children.length; i++) {
+            for (var j = 0; j < document.querySelector("#table").children[i].children.length; j++) {
+
+                document.querySelector("#table").children[i].children[j].addEventListener("mouseover", function () {
+                    this.style.border = "1px solid black";
+                });
+                document.querySelector("#table").children[i].children[j].addEventListener("click", function () {
+                    console.log(document.querySelector("#" + this.id).innerText);
+                    clicked_piece("#" + this.id);
+                    paly_piece(this.id);
+                    console.log("turn: " + turn);
+                    piececlickSound.play();
+                    
+                });
+                document.querySelector("#table").children[i].children[j].addEventListener("mouseout", function () {
+                    this.style.border = "none";
+                });
+            }
+        }
+    }
+
+    var clickCount = 0;
+    var selected_piece_id = "";
+    var target_piece_id = "";
+    function paly_piece(pid){
+        if (clickCount == 0) {
+            selected_piece_id = pid;
+            clickCount++;
+            console.log("selected_piece_id: " + selected_piece_id + "clickCount: " + clickCount);
+        }
+        else if (clickCount == 1) {
+            target_piece_id = pid;
+            console.log("target_piece_id: " + target_piece_id + "clickCount: " + clickCount);
+            move_pieces(selected_piece_id, target_piece_id);
+            clickCount = 0;
+        }
+    }
+
+//swap piece from one location to another
+    function move_pieces(selected_piece_id, target_piece_id) {
+        if (selected_piece_id == target_piece_id) {
+            return;
+        }
+        //more rule implementation can be added here using same concept as above 
+        //make a rule lsit and check if the move is valid
+        selected_piece = document.getElementById(selected_piece_id);
+        target_location = document.getElementById(target_piece_id);
+        if(selected_piece.style.backgroundImage == '' && target_location.style.backgroundImage == '' || selected_piece.style.backgroundImage == '' && target_location.style.backgroundImage != ''){
+            clickCount = 0;
+            return;
+        }
+        target_location.style.backgroundImage = selected_piece.style.backgroundImage;
+        selected_piece.style.backgroundImage = "";
+
+        pieceMoveSound.play();
+    }
+
+    function session_play() {
+        if (paly_status == on) {
+            if (turn == "white") {
+
+            }
+        }
+    }
+
+    function getPossibleTargetLocations(element_id) {
+
+    }
+    //return clicked piece
+    function clicked_piece(element_id) {
+        var piece_value="";
+        var column = document.querySelector(element_id).id[3];
+        var row = document.querySelector(element_id).id[1];
+        if (document.querySelector(element_id).innerText.includes("pawn")){
+            piece_value="pawn";
+        }
+        else if (document.querySelector(element_id).innerText.includes("knight")){
+            piece_value="knight";
+        }
+        else if (document.querySelector(element_id).innerText.includes("bishop")){
+            piece_value="bishop";
+        }
+        else if (document.querySelector(element_id).innerText.includes("horse")){
+            piece_value="horse";
+        }
+        else if (document.querySelector(element_id).innerText.includes("queen")){
+            piece_value="queen";
+        }
+        else if (document.querySelector(element_id).innerText.includes("king")){
+            piece_value="king";
+        }
+        
+        console.log(piece_value);
+    }
+//highlight possible moves
+//using the row and column of the selected piece
+//f is the row of the possible move
+//leftfdc is the left forward diagonal column of the possible move
+//rightfdc is the right forward diagonal column of the possible move
+//leftbdc is the left backward diagonal column of the possible move
+//rightbdc is the right backward diagonal column of the possible move
+//b is the row of the possible move
+//leftbdc is the left backward diagonal column of the possible move
+//rightbdc is the right backward diagonal column of the possible move
+//left is the left column of the possible move
+//right is the right column of the possible move
+//leftb is the left column of the possible move
+//rightb is the right column of the possible move
+//leftbdc is the left backward diagonal column of the possible move
+
+
+
+
+    function play() {
+        if (paly_status == "off") {
+            paly_status = "on";
+            initial_load(); //loads table for starting game
+            document.querySelector("body").style.backgroundColor = "#365641"; //changes background color 
+            activate_board(); //activates the board
+            turn = "white"; //white starts the game
+            backgroundSound.play();
+            backgroundSound.loop = true;
+            backgroundSound.volume = 0.09;
+        }
+        else {
+            paly_status = "off";
+            document.querySelector("body").style.backgroundColor = "#FFFFFF";
+            backgroundSound.pause();
+
+        }
+    }
+    //function to load the initial chess board new game/reset
+    function initial_load() {
+        //white_knight
+        document.querySelector("#R1 > div:nth-child(6)").style.backgroundImage = white_knight_path;
+        document.querySelector("#R1 > div:nth-child(6)").innerText = "white_knight";
+        document.querySelector("#R1 > div:nth-child(3)").style.backgroundImage = white_knight_path;
+        document.querySelector("#R1 > div:nth-child(3)").innerText = "white_knight";
+        //black_knight
+        document.querySelector("#R8 > div:nth-child(6)").style.backgroundImage = black_knight_path;
+        document.querySelector("#R8 > div:nth-child(6)").innerText = "black_knight";
+        document.querySelector("#R8 > div:nth-child(3)").style.backgroundImage = black_knight_path;
+        document.querySelector("#R8 > div:nth-child(3)").innerText = "black_knight";
+        //white_bishop
+        document.querySelector("#R1 > div:nth-child(1)").style.backgroundImage = white_bishop_path;
+        document.querySelector("#R1 > div:nth-child(1)").innerText = "white_bishop";
+        document.querySelector("#R1 > div:nth-child(8)").style.backgroundImage = white_bishop_path;
+        document.querySelector("#R1 > div:nth-child(8)").innerText = "white_bishop";
+        //black_bishop
+        document.querySelector("#R8 > div:nth-child(1)").style.backgroundImage = black_bishop_path;
+        document.querySelector("#R8 > div:nth-child(1)").innerText = "black_bishop";
+        document.querySelector("#R8 > div:nth-child(8)").style.backgroundImage = black_bishop_path;
+        document.querySelector("#R8 > div:nth-child(8)").innerText = "black_bishop";
+        //white_horse
+        document.querySelector("#R1 > div:nth-child(2)").style.backgroundImage = white_horse_path;
+        document.querySelector("#R1 > div:nth-child(2)").innerText = "white_horse";
+        document.querySelector("#R1 > div:nth-child(7)").style.backgroundImage = white_horse_path;
+        document.querySelector("#R1 > div:nth-child(7)").innerText = "white_horse";
+        //black_horse
+        document.querySelector("#R8 > div:nth-child(2)").style.backgroundImage = black_horse_path;
+        document.querySelector("#R8 > div:nth-child(2)").innerText = "black_horse";
+        document.querySelector("#R8 > div:nth-child(7)").style.backgroundImage = black_horse_path;
+        document.querySelector("#R8 > div:nth-child(7)").innerText = "black_horse";
+        //white_queen
+        document.querySelector("#R1 > div:nth-child(4)").style.backgroundImage = white_queen_path;
+        document.querySelector("#R1 > div:nth-child(4)").innerText = "white_queen";
+        //black_queen
+        document.querySelector("#R8 > div:nth-child(4)").style.backgroundImage = black_queen_path;
+        document.querySelector("#R8 > div:nth-child(4)").innerText = "black_queen";
+        //white_king
+        document.querySelector("#R1 > div:nth-child(5)").style.backgroundImage = white_king_path;
+        document.querySelector("#R1 > div:nth-child(5)").innerText = "white_king";
+        //black_king
+        document.querySelector("#R8 > div:nth-child(5)").style.backgroundImage = black_king_path;
+        document.querySelector("#R8 > div:nth-child(5)").innerText = "black_king";
+
+        for (var i = 0; i < 8; i++) {
+            //black_pawn
+            document.querySelector(`#R2 > div:nth-child(${i + 1})`).style.backgroundImage = white_pawn_path;
+            document.querySelector(`#R2 > div:nth-child(${i + 1})`).innerText = "white_pawn";
+            //white_pawn
+            document.querySelector(`#R7 > div:nth-child(${i + 1})`).style.backgroundImage = black_pawn_path;
+            document.querySelector(`#R7 > div:nth-child(${i + 1})`).innerText = "black_pawn";
+        }
+
+
+    }
+
+</script>
+
+</html>
